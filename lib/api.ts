@@ -147,7 +147,7 @@ export const authApi = {
     return post<void>("/auth/refresh");
   },
   googleRedirect() {
-    const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000";
+    const backend = process.env.NEXT_PUBLIC_BACKEND_URL ?? (() => { throw new Error("NEXT_PUBLIC_BACKEND_URL is not set"); })();
     return `${backend}/api/v1/auth/google`;
   },
 };
