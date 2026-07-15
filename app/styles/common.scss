@@ -1,0 +1,93 @@
+@use "mixins" as *;
+
+body {
+  margin: 0px auto;
+  padding: 0px;
+}
+
+.inpt1 {
+  background: var(--theme-gray-hover);
+  border: 1px solid var(--theme-gray-hover);
+  border-radius: 32px;
+  width: 424px;
+  height: 40px;
+  padding: 7px 47px;
+  @include ease;
+}
+
+.bg-theme-card {
+  background-color: var(--theme-white) !important;
+}
+
+.bg-theme-reaction {
+  background-color: #fbfcfd !important;
+}
+
+.bg-theme-comment-box {
+  background-color: #f6f6f6 !important;
+}
+
+.bg-theme-main {
+  background-color: var(--theme-border-1) !important;
+}
+
+[data-bs-theme="dark"] .bg-theme-card {
+  background-color: var(--theme-dark-body-bg) !important;
+}
+
+[data-bs-theme="dark"] .bg-theme-main {
+  background-color: var(--theme-dark-card-bg) !important;
+}
+
+[data-bs-theme="dark"] .bg-theme-reaction {
+  background-color: var(--theme-dark-reaction-bg) !important;
+}
+
+[data-bs-theme="dark"] .bg-theme-comment-box {
+  background-color: var(--theme-dark-card-bg) !important;
+}
+
+.post-action-btn {
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  @include ease;
+}
+
+.post-action-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="dark"] .post-action-btn:hover {
+  background-color: var(--theme-dark-reaction-hover-bg) !important;
+}
+
+.inpt1:hover {
+  border: 1px solid var(--bs-primary);
+}
+
+.inpt1::placeholder {
+  font-family: Poppins;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.inpt1:focus::placeholder {
+  @include ease;
+  opacity: 0;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+textarea {
+  resize: none !important;
+}

@@ -1,0 +1,59 @@
+$min-contrast-ratio: 3;
+$primary: #1890ff;
+$success: #0acf83;
+$body-bg: #f0f2f5;
+
+$h1-font-size: 30px;
+$h2-font-size: 24px;
+$h3-font-size: 20px;
+$h4-font-size: 17px;
+
+// Typography
+$font-family-base: var(--font-poppins), sans-serif;
+$paragraph-margin-bottom: 0;
+
+// Links
+$link-decoration: none;
+$link-hover-decoration: none;
+$link-hover-color: $primary;
+
+// Forms
+$input-focus-box-shadow: none;
+$input-btn-focus-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-active-box-shadow: none;
+$btn-box-shadow: none;
+
+$body-color: #767676;
+$headings-color: var(--theme-text-main);
+$enable-smooth-scroll: true;
+
+:root {
+  --text-primary: #000000;
+  --theme-text-main: #2d3748;
+  --theme-text-brown: #312000;
+  --theme-gray-light: #c4c4c4;
+  --theme-text-muted: #4a5568;
+  --theme-black: #212121;
+  --theme-gray-dark: #666666;
+  --theme-primary-light: #e8f4ff;
+  --theme-white: #ffffff;
+  --theme-gray-hover: #f5f5f5;
+  --theme-border-color: #dfdfdf;
+  --theme-dark-body-bg: #112032;
+  --theme-dark-card-bg: #232e42;
+  --theme-border-1: #f0f2f5;
+}
+
+[data-bs-theme="dark"] {
+  --text-primary: var(--theme-white);
+  --theme-dark-text-muted-1: #7e8690;
+  --theme-dark-text-muted-2: #8c8f95;
+  --theme-dark-text-muted-3: #b7bcc1;
+  --theme-dark-reaction-bg: #11263c;
+  --theme-dark-reaction-hover-bg: #123150;
+  --theme-dark-hover-bg: #b2a7a742;
+  --theme-dark-text-light: #ffffffb8;
+  --theme-dark-bg-light: #f8f9fa;
+  --theme-dark-primary: #1890ff;
+}

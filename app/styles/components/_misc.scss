@@ -1,0 +1,70 @@
+.left_logo {
+  max-width: 161px;
+  margin: 0 auto;
+}
+
+.left_img {
+  max-width: 633px;
+}
+
+.nav_logo {
+  max-width: 135px;
+}
+
+.ppl_img {
+  max-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bg-light {
+  background-color: transparent !important;
+}
+
+/* Auth Shapes */
+.shape {
+  position: absolute;
+  z-index: -1;
+}
+
+.shape_img {
+  max-width: 100%;
+  height: auto;
+}
+
+.dark_shape {
+  display: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.btn-icon-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-icon-xs {
+  width: 24px;
+  height: 24px;
+}
+
+.card {
+  background-color: var(--theme-white) !important;
+}

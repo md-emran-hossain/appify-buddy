@@ -1,0 +1,9 @@
+/* 
+  Main SCSS File
+  This file imports all component-specific SCSS files.
+*/
+
+@use "components/header";
+@use "components/layout";
+@use "components/dark_mode";
+@use "components/misc";

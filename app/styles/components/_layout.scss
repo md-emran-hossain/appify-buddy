@@ -1,0 +1,80 @@
+@use "../mixins" as *;
+
+.theme-toggle-wrapper {
+  transform: translateX(-50%);
+  
+  @media (max-width: 1540px) {
+    right: -50px !important;
+  }
+}
+
+.theme-toggle-btn {
+  background: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+  border-radius: 40px;
+  width: 66px;
+  height: 32px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transform: rotate(90deg);
+  transition: none;
+}
+
+.theme-toggle-slider {
+  position: absolute;
+  left: 10px;
+  @include ease;
+}
+
+.theme-toggle-circle {
+  background: var(--theme-white);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle-icon-light {
+  position: absolute;
+  right: 16px;
+  transform: rotate(-90deg);
+}
+
+.theme-toggle-icon-dark {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+
+}
+
+.mobile_navigation_bottom_list {
+  @include flex-center-between;
+}
+.mobile_navigation_bottom_link {
+  @include ease;
+  position: relative;
+  color: var(--bs-body-color);
+
+  svg {
+    opacity: 0.6;
+    @include ease;
+  }
+
+  &:hover,
+  &.mobile_navigation_bottom_link_active {
+    color: var(--bs-primary);
+
+    svg {
+      opacity: 1;
+    }
+  }
+}
+
+.d-theme-dark-block {
+  display: none !important;
+}
+
+.d-theme-dark-none {
+  display: block !important;
+}
