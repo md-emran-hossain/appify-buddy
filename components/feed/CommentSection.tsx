@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import { commentsApi } from "@/lib/api";
+import { useAuth } from "@/lib/auth-context";
 import type { Comment } from "@/types";
 import CommentItem from "./CommentItem";
 
@@ -17,6 +18,7 @@ const CommentSection = ({
   commentCount,
   showInput = false,
 }: CommentSectionProps) => {
+  const { user } = useAuth();
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -121,6 +123,7 @@ const CommentSection = ({
           setCommentText={setCommentText}
           onSubmit={handleSubmit}
           submitting={submitting}
+          user={user}
         />
       )}
     </>
@@ -132,24 +135,35 @@ function CommentInlineInput({
   setCommentText,
   onSubmit,
   submitting,
+  user,
 }: {
   commentText: string;
   setCommentText: (v: string) => void;
   onSubmit: () => void;
   submitting: boolean;
+  user?: { avatarUrl?: string | null; firstName?: string; lastName?: string } | null;
 }) {
   return (
     <div className="bg-theme-comment-box rounded-pill px-2 py-2">
       <div className="d-flex align-items-center justify-content-between flex-nowrap">
         <div className="d-flex align-items-center flex-grow-1">
           <div className="me-2 flex-shrink-0">
-            <Image
-              width={32}
-              height={32}
-              src="/assets/images/comment_img.png"
-              alt="User"
-              className="avatar object-fit-cover"
-            />
+            {user?.avatarUrl ? (
+              <Image
+                width={32}
+                height={32}
+                src={user.avatarUrl}
+                alt="User"
+                className="avatar object-fit-cover"
+              />
+            ) : (
+              <div
+                className="avatar bg-primary text-white d-flex align-items-center justify-content-center rounded-circle"
+                style={{ width: 32, height: 32, fontSize: 12 }}
+              >
+                {user?.firstName?.[0]}{user?.lastName?.[0]}
+              </div>
+            )}
           </div>
           <div className="position-relative flex-grow-1">
             <input
