@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-const BACKEND = process.env.BACKEND_URL ?? (() => { throw new Error("BACKEND_URL is not set"); })();
+const BACKEND = process.env.BACKEND_URL!;
 
 export async function GET(
   request: NextRequest,
